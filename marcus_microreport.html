@@ -445,7 +445,7 @@ function drawRasters(){
  grid.innerHTML=pairs.map(pair=>{const r=currentRaster(pair);if(!r)return`<div class="empty">No raster was supplied for ${esc(mouseLabel(g,state.mouse))}, test day ${state.day}, ${pair}.</div>`;
   const d=r.detail,p0=d&&d.plots&&d.plots[0],stats=[];
   if(d&&p0&&d.sourceLickIndex!==null&&d.sourceLickIndex!==undefined)stats.push(`${esc(p0.odor)}-directed licking index <b>${number(d.sourceLickIndex,3)}</b>`);
-  if(d&&p0&&d.sourceChoiceIndex!==null&&d.sourceChoiceIndex!==undefined)stats.push(`choice index <b>${number(d.sourceChoiceIndex,3)}</b>`);
+  if(d&&p0&&d.sourceChoiceIndex!==null&&d.sourceChoiceIndex!==undefined)stats.push(`Response-allocation Index <b>${number(d.sourceChoiceIndex,3)}</b>`);
   return`<article class="raster-panel"><div class="raster-head"><span class="pair">${pair}</span><span class="stats">${stats.join(', ')}</span></div><div class="raster-plot">${r.needsYLabel?'<div class="raster-y-label">Trial number</div>':''}<button type="button" class="raster-img-button" data-open-pair="${pair}" aria-label="Inspect ${pair} licks for ${esc(mouseLabel(g,state.mouse))}, test day ${state.day}">${rasterPreview(r)}<span class="open-hint" aria-hidden="true">Inspect licks</span></button></div>${r.needsAxisLabel?'<div class="raster-axis-label">Time from odor onset (s)</div>':''}</article>`;}).join('');
  for(const b of grid.querySelectorAll('[data-open-pair]'))b.onclick=()=>openZoom(currentRaster(b.dataset.openPair));
  updateBar();
@@ -603,7 +603,7 @@ function openLickDetail(r){
 function drawLickCounts(){
  const d=lickView.raster.detail;
  const val=v=>v===null||v===undefined?'—':Number(v).toLocaleString('en',{maximumFractionDigits:6});
- $('lick-counts-content').innerHTML=`<table><thead><tr><th>Odor</th><th>Licks</th><th>Responding trials</th><th>Licking index</th><th>Choice index</th></tr></thead><tbody>${d.plots.map((p,i)=>`<tr><th>${esc(p.odor)}</th><td>${p.responseLickCount}</td><td>${p.choiceCount}</td><td>${val(d.sourceLickIndex===null?null:i===0?d.sourceLickIndex:1-d.sourceLickIndex)}</td><td>${val(d.sourceChoiceIndex===null?null:i===0?d.sourceChoiceIndex:1-d.sourceChoiceIndex)}</td></tr>`).join('')}</tbody></table>`;
+ $('lick-counts-content').innerHTML=`<table><thead><tr><th>Odor</th><th>Licks</th><th>Responding trials</th><th>Licking index</th><th>Response-allocation Index</th></tr></thead><tbody>${d.plots.map((p,i)=>`<tr><th>${esc(p.odor)}</th><td>${p.responseLickCount}</td><td>${p.choiceCount}</td><td>${val(d.sourceLickIndex===null?null:i===0?d.sourceLickIndex:1-d.sourceLickIndex)}</td><td>${val(d.sourceChoiceIndex===null?null:i===0?d.sourceChoiceIndex:1-d.sourceChoiceIndex)}</td></tr>`).join('')}</tbody></table>`;
 }
 function timePrecision(span){return span<.1?4:span<1?3:span<4?2:1;}
 function niceTimeStep(span){const raw=span/7,pow=10**Math.floor(Math.log10(raw)),fraction=raw/pow;return (fraction<=1?1:fraction<=2?2:fraction<=5?5:10)*pow;}
