@@ -28,11 +28,4 @@ Selecting an individual mouse highlights its performance curve without changing 
 
 ## Methods and source data
 
-The viewer provides an interactive way to inspect the behavioral data accompanying the microreport. Experimental procedures, performance and preference-index definitions, and statistical analyses are described in the manuscript and its accompanying source data.
-
-Odor identities and randomization sequences are taken from Tables S1 and S2 in Additional file 1. Performance, preference indices, sucrose and quinine delivery counts, and the statistics shown in the viewer are taken from Additional file 2 (Figures 1, S2 and S5 and the Statistics sheet). A few displayed values are calculated in the viewer from these data rather than taken from them directly:
-
-- **Sucrose and quinine volumes** in the tiles: delivery counts summed over odors A–E and multiplied by the volume of each delivery, 5 µL of 10% sucrose or 1.5 µL of 0.64% quinine. These are volumes delivered, not volumes consumed.
-- **Group and sequence means ± SEM** in the odor group × randomization sequence matrix, and the all-mouse means in the tiles.
-- **The position-D share** in **Same chemical, different position**, which is one minus the same mouse’s B-directed index.
-- **The day of each randomization block** in the block calendar, which combines the performance values in Figure 1 with the sequences in Table S2.
+The viewer provides an interactive way to inspect the behavioral data accompanying the microreport. Experimental procedures, performance and preference-index definitions, and statistical analyses are described in the published paper. The source data are available as Additional file 2 (.xlsx) of the published paper.
