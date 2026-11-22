@@ -28,4 +28,4 @@ Selecting an individual mouse highlights its performance curve without changing 
 
 ## Methods and source data
 
-The viewer provides an interactive way to inspect the behavioral data accompanying the microreport. Experimental procedures, performance and preference-index definitions, and statistical analyses are described in the published paper. The source data are available as Additional file 2 (.xlsx) of the published paper.
+The viewer provides an interactive way to inspect the behavioral data accompanying the microreport. Experimental procedures, performance and preference-index definitions, and statistical analyses are described in the published paper. The source data are available as Additional file 2 (.xlsx) of the manuscript.
